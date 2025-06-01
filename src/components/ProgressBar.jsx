@@ -1,7 +1,7 @@
 //manages visual progress tracking for quiz completion.
 
 import React from 'react';
-import './ProgressBar.css';
+import '../App.css';
 
 const ProgressBar = ({ answeredCount, total }) => {
   return (
