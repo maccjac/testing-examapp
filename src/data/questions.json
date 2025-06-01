@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "type": "multiple",
+    "question": "Which company developed the Windows operating system?",
+    "choices": ["Apple", "Microsoft", "Google", "Linux"],
+    "answer": "Microsoft"
+  },
+  {
+    "id": 2,
+    "type": "multiple",
+    "question": "What does 'CPU' stand for?",
+    "choices": ["Central Processing Unit", "Computer Personal Utility", "Control Program Unit", "Core Processing Utility"],
+    "answer": "Central Processing Unit"
+  },
+  {
+    "id": 3,
+    "type": "boolean",
+    "question": "The binary number system uses only 0s and 1s.",
+    "answer": "True"
+  },
+  {
+    "id": 4,
+    "type": "boolean",
+    "question": "RAM is a permanent storage device.",
+    "answer": "False"
+  },
+  {
+    "id": 5,
+    "type": "identification",
+    "question": "Which programming language is known for its 'snake' logo?",
+    "answer": "Python"
+  },
+  {
+    "id": 6,
+    "type": "multiple",
+    "question": "Which protocol is used for sending emails?",
+    "choices": ["HTTP", "SMTP", "FTP", "DNS"],
+    "answer": "SMTP"
+  },
+  {
+    "id": 7,
+    "type": "multiple",
+    "question": "What does HTML stand for?",
+    "choices": ["Hyperlink Text Managing Language", "Hyper Text Markup Language", "High-Tech Management Language", "Hyper Transfer Machine Learning"],
+    "answer": "Hyper Text Markup Language"
+  },
+  {
+    "id": 8,
+    "type": "boolean",
+    "question": "The first computer virus was called 'Creeper'.",
+    "answer": "True"
+  },
+  {
+    "id": 9,
+    "type": "boolean",
+    "question": "Linux is an open-source operating system.",
+    "answer": "True"
+  },
+  {
+    "id": 10,
+    "type": "identification",
+    "question": "What is the main function of an operating system?",
+    "answer": "Managing hardware and software resources"
+  }
+]
