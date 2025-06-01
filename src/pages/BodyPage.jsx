@@ -1,3 +1,4 @@
+//core quiz interface, handling question progression.
 import React from 'react';
 import ProgressBar from '../components/ProgressBar';
 import QuestionCard from '../components/QuestionCard';
