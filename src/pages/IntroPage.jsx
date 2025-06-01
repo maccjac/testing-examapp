@@ -1,6 +1,5 @@
 //serves as the welcome screen with quiz instructions.
-import React from 'react';
-import './IntroPage.css';
+import '../App.css';
 
 const IntroPage = ({ startExam }) => {
   return (
