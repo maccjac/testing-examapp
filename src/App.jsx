@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';  // React and hooks imported
 import IntroPage from './pages/IntroPage';
 import BodyPage from './pages/BodyPage';
 import ResultPage from './pages/ResultPage';
@@ -33,21 +33,22 @@ const App = () => {
   };
 
   if (!username) {
-    return <IntroPage username={username} setUsername={setUsername} />;
+    // Here, IntroPage should accept these props or you'll adjust accordingly
+    return <IntroPage startExam={() => setUsername('User')} />;
   }
 
   if (submitted) {
-    return <ResultPage questions={questions} answers={answers} name={username} />;
+    return <ResultPage questions={questions} answers={answers} />;
   }
 
   return (
     <BodyPage
       questions={questions}
-      current={currentQuestion}
-      setCurrent={setCurrentQuestion}
+      currentQuestion={currentQuestion}
+      setCurrentQuestion={setCurrentQuestion}
       answers={answers}
-      onAnswer={handleAnswer}
-      onSubmit={handleSubmit}
+      handleAnswer={handleAnswer}
+      handleSubmit={handleSubmit}
       timeLeft={timeLeft}
     />
   );
