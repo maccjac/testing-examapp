@@ -1,48 +1,55 @@
-//Handles routing between the pages (IntroPage, BodyPage, and ResultPage)
 import React, { useState, useEffect } from 'react';
 import IntroPage from './pages/IntroPage';
 import BodyPage from './pages/BodyPage';
 import ResultPage from './pages/ResultPage';
 import questions from './data/questions.json';
-import { setLocalStorage, clearLocalStorage } from './utils/localStorageUtils';
 import './App.css';
 
 const App = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [answers, setAnswers] = useState(() => JSON.parse(localStorage.getItem('answers')) || {});
+  const [answers, setAnswers] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [username, setUsername] = useState('');
+  const [timeLeft, setTimeLeft] = useState(600);
 
   useEffect(() => {
-    setLocalStorage('answers', answers);
-    setLocalStorage('currentQuestion', currentQuestion);
-  }, [answers, currentQuestion]);
+    if (submitted || !username) return;
+    if (timeLeft <= 0) {
+      setSubmitted(true);
+      return;
+    }
+    const timer = setInterval(() => {
+      setTimeLeft(prev => prev - 1);
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [timeLeft, submitted, username]);
 
-  const handleAnswer = (id, answer) => {
-    setAnswers(prev => ({ ...prev, [id]: answer }));
+  const handleAnswer = (id, value) => {
+    setAnswers(prev => ({ ...prev, [id]: value }));
   };
 
   const handleSubmit = () => {
     setSubmitted(true);
-    clearLocalStorage(); // Clear localStorage when submitted
   };
 
+  if (!username) {
+    return <IntroPage username={username} setUsername={setUsername} />;
+  }
+
+  if (submitted) {
+    return <ResultPage questions={questions} answers={answers} name={username} />;
+  }
+
   return (
-    <div className="app">
-      {submitted ? (
-        <ResultPage questions={questions} answers={answers} />
-      ) : currentQuestion === 0 ? (
-        <IntroPage startExam={() => setCurrentQuestion(1)} />
-      ) : (
-        <BodyPage
-          questions={questions}
-          currentQuestion={currentQuestion}
-          setCurrentQuestion={setCurrentQuestion}
-          answers={answers}
-          handleAnswer={handleAnswer}
-          handleSubmit={handleSubmit}
-        />
-      )}
-    </div>
+    <BodyPage
+      questions={questions}
+      current={currentQuestion}
+      setCurrent={setCurrentQuestion}
+      answers={answers}
+      onAnswer={handleAnswer}
+      onSubmit={handleSubmit}
+      timeLeft={timeLeft}
+    />
   );
 };
 
