@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import IntroPage from './pages/IntroPage';
 import BodyPage from './pages/BodyPage';
 import ResultPage from './pages/ResultPage';
@@ -43,7 +43,8 @@ const App = () => {
     setSubmitted(true);
     clearLocalStorage();
   };
-
+  
+  console.log('username:', username);
   if (!username) {
     return <IntroPage username={username} setUsername={setUsername} />;
   }

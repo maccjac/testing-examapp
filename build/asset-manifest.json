@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/maccjac/testing-examapp/static/css/main.98941dca.css",
+    "main.js": "/maccjac/testing-examapp/static/js/main.cb6f25eb.js",
+    "index.html": "/maccjac/testing-examapp/index.html",
+    "main.98941dca.css.map": "/maccjac/testing-examapp/static/css/main.98941dca.css.map",
+    "main.cb6f25eb.js.map": "/maccjac/testing-examapp/static/js/main.cb6f25eb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.98941dca.css",
+    "static/js/main.cb6f25eb.js"
+  ]
+}

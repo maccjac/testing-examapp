@@ -1,5 +1,4 @@
 //serves as the welcome screen with quiz instructions.
-import * as React from 'react';
 import '../App.css';
 
 const IntroPage = ({ username, setUsername }) => {
